@@ -11,6 +11,10 @@
 		a {
 			font: bold 24px/1 'arial';
 			color: #fff;
+
+			&.on {
+				color: hotpink;
+			}
 		}
 	}
 
