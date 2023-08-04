@@ -5,7 +5,6 @@ import styles from './Header.module.scss';
 function Header() {
 	const router = useRouter();
 	const currentPath = router.pathname;
-	console.log(currentPath);
 
 	return (
 		<header id={styles.header}>
@@ -29,6 +28,11 @@ function Header() {
 				<li>
 					<Link href='/isr' className={currentPath === '/isr' ? styles.on : ''}>
 						ISR
+					</Link>
+				</li>
+				<li>
+					<Link href='/post' className={currentPath === '/post' ? styles.on : ''}>
+						POST
 					</Link>
 				</li>
 			</ul>

@@ -17,7 +17,7 @@ export default function Home() {
 				<Header />
 				<h1>Main</h1>
 				<div className={styles.pic}>
-					<Image src={pic} alt='pic' fill quality={50} placeholder='blur' />
+					<Image src={pic} alt='pic' fill quality={50} />
 				</div>
 				<div className={styles.pic}>
 					<Image
