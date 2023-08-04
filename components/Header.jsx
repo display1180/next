@@ -16,6 +16,11 @@ function Header() {
 
 			<ul id={styles.gnb}>
 				<li>
+					<Link href='/csr' className={currentPath === '/csr' ? styles.on : ''}>
+						CSR
+					</Link>
+				</li>
+				<li>
 					<Link href='/ssg' className={currentPath === '/ssg' ? styles.on : ''}>
 						SSG
 					</Link>
