@@ -3,8 +3,8 @@ import Header from './Header';
 import styles from './SubLayout.module.scss';
 import { Orbitron, Noto_Sans_KR } from 'next/font/google';
 
-const orbitron = Orbitron({ subsets: ['latin'], weight: ['400', '500'], preload: true });
-const notoSans = Noto_Sans_KR({ subsets: ['latin'], weight: ['100', '300'], preload: true });
+const orbitron = Orbitron({ subsets: ['latin'], weight: ['400', '500'], preload: true, variable: '--orbitron' });
+const notoSans = Noto_Sans_KR({ subsets: ['latin'], weight: ['100', '300'], preload: true, variable: '--notoSans' });
 console.log(orbitron);
 console.log(notoSans);
 
