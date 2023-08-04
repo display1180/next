@@ -20,9 +20,9 @@ function SubLayout(props) {
 			<section>
 				<Header />
 
-				<div className={clsx(styles.subLayout, isClass && orbitron.className, notoSans.className)}>
+				<div className={clsx(styles.subLayout)}>
 					<h1>{props.name}</h1>
-					<p className={notoSans.className}>레이아웃 컨텐츠 페이지입니다.</p>
+					<p>레이아웃 컨텐츠 페이지입니다.</p>
 					{props.children}
 				</div>
 			</section>
