@@ -9,7 +9,8 @@
 
 	h1 {
 		a {
-			font: bold 24px/1 'arial';
+			font-weight: 500;
+			font-family: var(--font-orbitron);
 			color: #fff;
 
 			&.on {

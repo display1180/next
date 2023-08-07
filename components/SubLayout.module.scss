@@ -6,13 +6,12 @@
 		font-size: 60px;
 		color: #555;
 		margin-bottom: 30px;
-		//font-family: var(--orbitron);
-		font-family: 'orbitron';
+		font-family: var(--font-orbitron);
 	}
 	p {
 		font-weight: 300;
 		font-size: 20px;
 		color: #777;
-		//font-family: var(--notoSans);
+		font-family: var(--font-notoSans);
 	}
 }
