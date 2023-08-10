@@ -1,6 +1,6 @@
 import SubLayout from '@/components/SubLayout';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Post() {
 	const [Tit, setTit] = useState('');
@@ -21,6 +21,15 @@ function Post() {
 				alert('글 저장에 실패했습니다.');
 			});
 	};
+
+	useEffect(() => {
+		axios
+			.get('/api/post')
+			.then((json) => {
+				console.log('get', json);
+			})
+			.catch((err) => console.log(err));
+	}, []);
 
 	return (
 		<SubLayout>

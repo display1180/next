@@ -3,6 +3,17 @@ import { Community } from '@/model/CommunitySchema';
 import { Counter } from '@/model/CounterSchema';
 
 export default async function handler(req, res) {
+	//전달된 요청이 GET일떄 처리 (글 호출)
+	if (req.method === 'GET') {
+		try {
+			await connectMongoDB();
+			const community = await Community.find();
+			res.status(200).send(community);
+		} catch (err) {
+			res.status(400).send({ err });
+		}
+	}
+
 	//전달된 요청 방식이 POST일때 처리 (글 저장)
 	if (req.method === 'POST') {
 		//클라이언트로부터 전달받은 데이터 정보 {title, content}
