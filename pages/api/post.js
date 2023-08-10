@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 			Counter.findOne({ name: 'counter' })
 				.exec()
 				.then((doc) => {
-					//카운터모델에서 가져온 클 고유번호를 클라이언트에서 넘어온 데이터에 추가
+					//카운터모델에서 가져온 글 고유번호를 클라이언트에서 넘어온 데이터에 추가
 					temp.communityNum = doc.communityNum;
 
 					//위에서 결합된 객체를 Community Model객체로 DB에 저장
