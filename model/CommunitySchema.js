@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const communitySchema = new mongoose.Schema(
 	{
 		title: String,
-		contnet: String,
+		content: String,
 		communityNum: Number,
 	},
 	{ collection: 'Community' }
