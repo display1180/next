@@ -32,7 +32,7 @@ function Post() {
 	}, []);
 
 	return (
-		<SubLayout>
+		<SubLayout name={'Community'}>
 			<p>포스트페이지 인트로화면입니다.</p>
 			<div className='inputBox'>
 				<form onSubmit={handleSubmit}>

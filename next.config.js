@@ -12,6 +12,7 @@ const nextConfig = {
 	async redirects() {
 		return [{ source: '/redirect', destination: '/', permanent: true }];
 	},
+	compiler: { styledComponents: true },
 };
 
 module.exports = nextConfig;

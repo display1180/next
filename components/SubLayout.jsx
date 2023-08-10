@@ -11,14 +11,16 @@ function SubLayout(props) {
 	return (
 		<>
 			<Head>
-				<title>{props.name}</title>
+				<title>{props.name || ''}</title>
 			</Head>
 
 			<section>
 				<Header />
 
-				<div className={clsx(styles.subLayout, orbitron.className, notoSans.className)}>
-					<h1>{props.name}</h1>
+				<div
+					className={clsx(styles && styles.subLayout, orbitron && orbitron.className, notoSans && notoSans.className)}
+				>
+					<h1>{props.name || ''}</h1>
 					<p>레이아웃 컨텐츠 페이지입니다.</p>
 					{props.children}
 				</div>
