@@ -2,7 +2,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
 const firebaseConfig = {
-	apiKey: process.env.FIREBASE_API,
+	apiKey: process.env.NEXT_PUBLIC_FIREBASE_API,
 	authDomain: 'dcode2307.firebaseapp.com',
 	projectId: 'dcode2307',
 	storageBucket: 'dcode2307.appspot.com',
@@ -11,5 +11,4 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
 export default firebase;
