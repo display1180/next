@@ -1,14 +1,16 @@
 import SubLayout from '@/components/SubLayout';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { useGlobalData } from '@/hooks/useGlobalContext';
 
 function Post() {
+	const { LoginInfo } = useGlobalData();
+	console.log(LoginInfo);
 	const [Tit, setTit] = useState('');
 	const [Con, setCon] = useState('');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const item = { title: Tit, content: Con };
 
 		axios
 			.post('/api/post', item)

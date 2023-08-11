@@ -9,12 +9,16 @@ import { FaApple } from 'react-icons/fa6';
 //https://react-icons.github.io/react-icons에서 활용할 아이콘 컴포넌트 import문과 아이콘명 확인
 import { IconContext } from 'react-icons';
 import { FcAbout } from 'react-icons/fc';
+import { useGlobalData } from '@/hooks/useGlobalContext';
 
 //api 라우팅 (서버요청 처리를 위해서는 express라는 프레임웍을 활용)
 //next에서는 api폴더 안쪽에 서버쪽 요청 및 응답에대한 라우팅 설정가능
 //api폴더 안쪽의 파일명이 라우터 요청명으로 자동설정됨 /api/hello
 
 export default function Home() {
+	const data = useGlobalData();
+	console.log(data);
+
 	return (
 		<>
 			<Head>
