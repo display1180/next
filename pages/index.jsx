@@ -10,14 +10,25 @@ import { FaApple } from 'react-icons/fa6';
 import { IconContext } from 'react-icons';
 import { FcAbout } from 'react-icons/fc';
 import { useGlobalData } from '@/hooks/useGlobalContext';
+import firebase from '@/firebase';
 
 //api 라우팅 (서버요청 처리를 위해서는 express라는 프레임웍을 활용)
 //next에서는 api폴더 안쪽에 서버쪽 요청 및 응답에대한 라우팅 설정가능
 //api폴더 안쪽의 파일명이 라우터 요청명으로 자동설정됨 /api/hello
 
 export default function Home() {
-	const data = useGlobalData();
-	console.log(data);
+	const { setLoginInfo } = useGlobalData();
+
+	useEffect(() => {
+		//시작 페이지 접속시 firebase로 현재 로그인 상태값이 변경되면
+		firebase.auth().onAuthStateChanged((userInfo) => {
+			console.log(userInfo);
+			//해당 값이 비어있을때 (비로그인시) 전역 스테이트의 값을 비움
+			if (userInfo === null) setLoginInfo({ displayName: '', uid: '' });
+			//값이 있으면 (로그인) firebase로 받은 유저정보값을 전역 스테이트에 덮어쓰기
+			else setLoginInfo(userInfo.multiFactor.user);
+		});
+	}, [setLoginInfo]);
 
 	return (
 		<>
