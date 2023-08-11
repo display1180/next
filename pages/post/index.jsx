@@ -12,7 +12,7 @@ function Post() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
+		const item = { title: Tit, content: Con };
 		axios
 			.post('/api/post', item)
 			.then((res) => {
@@ -40,7 +40,12 @@ function Post() {
 			<p>포스트페이지 인트로화면입니다.</p>
 			<div className='inputBox'>
 				<form onSubmit={handleSubmit}>
-					<input type='text' placeholder='제목을 입력하세요' value={Tit} onChange={(e) => setTit(e.target.value)} />
+					<input
+						type='text'
+						placeholder='제목을 입력하세요'
+						value={Tit}
+						onChange={(e) => setTit(e.target.value)}
+					/>
 					<br />
 					<textarea
 						cols='30'
